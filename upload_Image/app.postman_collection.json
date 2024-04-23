@@ -1,0 +1,27 @@
+{
+    "_": {
+        "postman_id": "f5971f83-db3c-4b23-a3b5-4427d66d1519"
+    },
+    "item": [
+        {
+            "id": "98aca268-84a5-4d5b-8ba3-ca850402f4b1",
+            "name": "post",
+            "request": {
+                "url": {
+                    "query": [],
+                    "variable": []
+                },
+                "method": "GET"
+            },
+            "response": [],
+            "event": []
+        }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+        "_postman_id": "f5971f83-db3c-4b23-a3b5-4427d66d1519",
+        "name": "app",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+}

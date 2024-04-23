@@ -1,0 +1,41 @@
+<!-- ... (unchanged parts) -->
+
+<body>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="m" autocomplete="off" />
+      <input id="recipient" placeholder="Recipient Socket ID" />
+      <button>Send</button>
+    </form>
+  
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(function () {
+        var socket = io();
+  
+        $('form').submit(function(e){
+          e.preventDefault();
+          
+          // Get the recipient's socket ID from the input field
+          const recipientSocketId = $('#recipient').val();
+          
+          // Send a private message
+          socket.emit('private message', {
+            recipientSocketId: recipientSocketId,
+            message: $('#m').val()
+          });
+  
+          $('#m').val('');
+          return false;
+        });
+  
+        // Listen for private messages
+        socket.on('private message', function(msg){
+          $('#messages').append($('<li>').text(`Private message: ${msg.message}`));
+        });
+      });
+    </script>
+  </body>
+  </html>
+  
